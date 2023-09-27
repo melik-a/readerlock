@@ -16,6 +16,7 @@ func TestReaders(t *testing.T) {
 		{name: "AtomicReader", reader: NewAtomicReader(10, 3), limit: 3, value: 10},
 		{name: "MutexReader", reader: NewMutexReader(10, 4), limit: 4, value: 10},
 		{name: "OnceReader", reader: NewOnceReader(10), limit: 1, value: 10},
+		{name: "BufferedChannelReader", reader: NewBufferedChannelReader(10, 5), limit: 5, value: 10},
 	}
 
 	for _, test := range readTests {
